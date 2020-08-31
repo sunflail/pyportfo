@@ -1,3 +1,15 @@
 
 test@test.com,test,
 new test
+test@test.com,Python Anywhere,
+testing commit and pull and merge as well as .env calls on pythonanywhere.
+k@test.com,ee,
+d
+test@test.com,k,
+k
+k@k.com,test,
+bloah
+k@k.com,test,
+bloah
+k@k.com,test,
+bloah
