@@ -25,8 +25,9 @@ def write_to_file(data):
         message = data["message"]
         database.write(f'\n{email},{subject},\n{message}')
 
-#This correctly sends an email but requires gmail to have less secure apps allowed. Sendgrid working with smtp,
-#need to try the smtp api.
+'''This correctly sends an email but requires gmail to have less secure apps allowed. Sendgrid working with smtp
+on a local instance, but pythonanywhere only has api.sendgrid.com in the whitelist for free account, so need to change
+to the api to use as production.'''
 def send_email(data):
     email = EmailMessage()
     # email['from'] = data["email"]
