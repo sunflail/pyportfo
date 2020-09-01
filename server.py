@@ -1,7 +1,5 @@
 from flask import Flask, render_template, request, redirect
 import csv
-import smtplib
-from email.message import EmailMessage
 import os
 from dotenv import load_dotenv
 
@@ -27,7 +25,9 @@ def write_to_file(data):
 
 '''This correctly sends an email but requires gmail to have less secure apps allowed. Sendgrid working with smtp
 on a local instance, but pythonanywhere only has api.sendgrid.com in the whitelist for free account, so need to change
-to the api to use as production.'''
+to the api to use as production.
+import smtplib
+from email.message import EmailMessage
 def send_email(data):
     email = EmailMessage()
     # email['from'] = data["email"]
@@ -50,6 +50,22 @@ def send_email(data):
         # smtp.set_debuglevel(3)
         smtp.send_message(email)
         smtp.quit()
+'''
+
+#Use this section for the sendgrid v3 api
+import sendgrid
+from sendgrid.helpers.mail import *
+def send_email(data):
+    sg = sendgrid.SendGridAPIClient(api_key=os.environ.get('SendGridKey'))
+    from_email = Email(os.getenv("SGVerifiedSender")) #has to come from verified sender
+    to_email = To(os.getenv("SGVerifiedSender"))
+    subject = data["subject"]
+    content = Content("text/html", f'From: {(data["email"])}\n {data["message"]}')
+    mail = Mail(from_email,to_email,subject,content)
+    response = sg.client.mail.send.post(request_body=mail.get())
+    print(response.status_code)
+    print(response.body)
+    print(response.headers)
 
 def write_to_csv(data):
     with open('database.csv' , mode='a', newline='') as database2:
