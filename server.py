@@ -1,12 +1,13 @@
 from flask import Flask, render_template, request, redirect
 import csv
 import os
+# Uncomment these three lines to use in a local instance - on pythonanywhere they go in the wsgi file
 # from dotenv import load_dotenv
-
 # project_folder = os.path.expanduser('./')
 # load_dotenv(os.path.join(project_folder, '.env'))
+
 app = Flask(__name__)
-# app.config.from_pyfile('config.py')
+# app.config.from_pyfile('config.py') #don't understand the config file yet
 
 @app.route('/')
 def root():
