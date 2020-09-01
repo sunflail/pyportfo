@@ -1,12 +1,12 @@
 from flask import Flask, render_template, request, redirect
 import csv
 import os
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
-project_folder = os.path.expanduser('./')
-load_dotenv(os.path.join(project_folder, '.env'))
+# project_folder = os.path.expanduser('./')
+# load_dotenv(os.path.join(project_folder, '.env'))
 app = Flask(__name__)
-app.config.from_pyfile('config.py')
+# app.config.from_pyfile('config.py')
 
 @app.route('/')
 def root():
