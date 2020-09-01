@@ -60,7 +60,7 @@ def send_email(data):
     from_email = Email(os.getenv("SGVerifiedSender")) #has to come from verified sender
     to_email = To(os.getenv("SGVerifiedSender"))
     subject = data["subject"]
-    content = Content("text/html", f'From: {(data["email"])}\n {data["message"]}')
+    content = Content("text/plain", f'From: {(data["email"])}\n {data["message"]}')
     mail = Mail(from_email,to_email,subject,content)
     response = sg.client.mail.send.post(request_body=mail.get())
     print(response.status_code)
