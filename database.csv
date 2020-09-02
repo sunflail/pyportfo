@@ -23,3 +23,4 @@ k@k.com,test,bloah
 test@test.com,sendgrid api,through pythonanywhere
 test@test.com,sendgrid api,through pythonanywhere with dotenv in wsgi
 test@test.com,sendgrid api,through pythonanywhere with dotenv in wsgi
+test@test.com,testing .gitignore,this new line should only update the pythonanywhere database.* and those shouldn't sync with git
