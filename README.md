@@ -1,5 +1,5 @@
 # pyportfo
-My python learning <a href="sunflail.pythonanywhere.com" target="_blank">portfolio.</a>
+My python learning [portfolio](http://sunflail.pythonanywhere.com).
 
 Server.py contains the flask code.<br><br>
 API keys for sendgrid need to be stored in local/hosted .env with appropriate keys.<br><br>
