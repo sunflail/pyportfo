@@ -20,3 +20,6 @@ test@test.com,k,k
 k@k.com,test,bloah
 k@k.com,test,bloah
 k@k.com,test,bloah
+test@test.com,sendgrid api,through pythonanywhere
+test@test.com,sendgrid api,through pythonanywhere with dotenv in wsgi
+test@test.com,sendgrid api,through pythonanywhere with dotenv in wsgi
